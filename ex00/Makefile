@@ -1,7 +1,7 @@
 NAME 		= Mommy
 
 SRC_FILES	=	$(addprefix srcs/,) \
-				main.cpp
+				main.cpp Bureaucrat.cpp
 
 OBJS_DIR	= .objets
 

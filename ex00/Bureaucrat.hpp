@@ -4,14 +4,14 @@
 # include <iomanip>
 # include <iostream>
 # include <string>
-#include <exception>
+#include <stdexcept>
 
 class Bureaucrat
 {
 private:
 
-	int					_grade;
 	const std::string	_name;
+	int					_grade;
 
 public:
 
@@ -21,18 +21,18 @@ public:
 	~Bureaucrat();
 	Bureaucrat &operator=(const Bureaucrat &os);
 	const std::string	getName()const;
-	const int	getGrade()const;
+	int			getGrade()const;
 	void		gradePlus();
 	void		gradeMinus();
 	class GradeTooHighException : public std::exception
 	{
 		public:
-			virtual const char* what() throw();
+			virtual const char* what() const throw();
 	};
 	class GradeTooLowException : public std::exception
 	{
 		public:
-			virtual const char* what() throw();
+			virtual const char* what() const throw();
 	};
 };
 
